@@ -1,5 +1,6 @@
 #!/bin/bash
 
+function  () {
 # get the project name from command line
 PROJECT_NAME=''
 
@@ -29,3 +30,4 @@ cd "$PROJECT_NAME"
 touch README.md
 git init
 
+}
