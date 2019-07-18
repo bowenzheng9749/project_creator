@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function  () {
+function create() {
 # get the project name from command line
 PROJECT_NAME=''
 
