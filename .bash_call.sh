@@ -1,14 +1,17 @@
 #!/bin/bash
-function create() {
+
 # get the project name from command line
-PROJECT_NAME=$1
-PROJECT_NAME+=' '
-while (("$#"));
+PROJECT_NAME=''
+
+while (("$#-1"));
 do  
-    PROJECT_NAME+=$2
+    PROJECT_NAME+=$1
     PROJECT_NAME+=' '
     shift
 done
+PROJECT_NAME+=$1
+echo $PROJECT_NAME
+
 
 # call the python function for github
 chmod +x call_github.py
@@ -26,4 +29,3 @@ cd "$PROJECT_NAME"
 touch README.md
 git init
 
-}
