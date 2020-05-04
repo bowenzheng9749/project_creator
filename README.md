@@ -13,3 +13,8 @@ This project is meant to automate the process of creating a project locally and 
 9. git commit
 10. git push
 11. code project name to open in vscode
+
+## how to use it
+You can simply add the code snippet from .bash_call.sh to ~./bash_profile and you can just type "create project name" into the command the run it. Also, you need to create an access_token file for github validations.
+
+
