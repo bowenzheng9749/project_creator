@@ -1,33 +1,21 @@
-#!/bin/bash
+#!/bin/sh
+cd /Users/bowenzheng/Git 
 
-function create() {
-# get the project name from command line
-PROJECT_NAME=''
-
-while (("$#-1"));
-do  
-    PROJECT_NAME+=$1
-    PROJECT_NAME+=' '
-    shift
-done
-PROJECT_NAME+=$1
-echo $PROJECT_NAME
-
-
-# call the python function for github
-chmod +x call_github.py
-python3 call_github.py $PROJECT_NAME
-
-#now we cd to the project folder and create a new project
-cd /Users/zhengm/Documents/Projects/MyProjects
-if [ -d "$PROJECT_NAME" ]
-then 
-    echo "Directory already exists"
-    exit
-fi
-mkdir "$PROJECT_NAME"
-cd "$PROJECT_NAME"
-touch README.md
-git init
+# This function is used to concatenate all the argv
+# with underscore '_' for the project and folder name
+get_project_name() {
+old="$IFS"
+IFS='_'
+str="$*"
+echo "$str"
+IFS=$old
 
 }
+
+# mkdir $(get_project_name $@)
+# cd $(get_project_name $@)
+# git init
+
+# Here we will call the python script 
+# to open up github
+python3 /Users/bowenzheng/Git/project_creator/call_github.py $(get_project_name $@)

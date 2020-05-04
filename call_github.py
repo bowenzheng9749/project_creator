@@ -1,6 +1,11 @@
 import sys
-import webbrowser
+from access_token import token
+from github import Github
 
-project_name = ''
-for i in range(1, len(sys.argv)):
-    project_name += (sys.argv[i] + ' ')
+repo_name = sys.argv[1]
+g = Github(token['username'], token['password'])
+user = g.get_user()
+repo = user.create_repo(repo_name)
+
+
+
