@@ -7,7 +7,7 @@ This project is meant to automate the process of creating a project locally and 
 3. navigate into the folder *DONE*
 4. call git init *DONE*
 5. go to GitHub and create a new repository with the project name *DONE*
-6. copy the remote url
+6. copy the remote url *DONE*
 7. add remote to local folder
 8. git add
 9. git commit
